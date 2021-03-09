@@ -79,6 +79,7 @@ echo "XALT Site Controlled Prefix.........................." : $SITE_CONTROLLED_
 echo
 echo "XALT PRELOAD MODE ONLY..............................." : $PRELOAD_ONLY
 echo "XALT_FILE_PREFIX....................................." : "$XALT_FILE_PREFIX"
+echo "USER_DIRNAME........................................." : "$USER_DIRNAME"
 echo "XALT_TRANSMISSION_STYLE.............................." : $TRANSMISSION
 echo "XALT_ETC_DIR........................................." : $ETC_DIR
 echo "XALT Config.py file.................................." : $XALT_CONFIG_PY

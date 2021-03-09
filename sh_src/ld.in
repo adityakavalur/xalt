@@ -50,6 +50,12 @@ if [ -z "${XALT_FILE_PREFIX+x}" ]; then
     XALT_FILE_PREFIX=@xalt_file_prefix@
 fi
 
+if [[ "${XALT_FILE_PREFIX}" == "USER_DIR" ]];then
+    if [[ -z "${USER_DIRNAME+x}" ]]; then
+        USER_DIRNAME=@user_dirname@@
+    fi
+fi
+
 if [ -z "${XALT_PRELOAD_ONLY+x}" ]; then
     XALT_PRELOAD_ONLY=@preload_only@
 elif [ "${XALT_PRELOAD_ONLY:-}" != no ]; then

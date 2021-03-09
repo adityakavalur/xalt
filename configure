@@ -674,6 +674,7 @@ XALT_MPI_TRACKING
 XALT_GPU_TRACKING
 XALT_GPU_TRACKING_STYLE
 XALT_FILE_PREFIX
+USER_DIRNAME
 XALT_FUNCTION_TRACKING
 XALT_LOGGING_URL
 TRANSMISSION
@@ -1388,6 +1389,9 @@ Optional Packages:
   --with-functionTracking=ans
                           Track functions from modules [[yes]]
   --with-xaltFilePrefix=ans
+                          Prefix where the json files are written [[$HOME]]
+                          or direct to use userdirname
+  --with-userdirname=ans
                           Prefix where the json files are written [[$HOME]]
   --with-trackGPU=ans     Track GPU executables {yes(nvml),no,dcgm,nvml},
                           [[no]]
@@ -3122,6 +3126,17 @@ if test "${with_xaltFilePrefix+set}" = set; then :
   withval=$with_xaltFilePrefix; XALT_FILE_PREFIX="$withval"
     { $as_echo "$as_me:${as_lineno-$LINENO}: result: XALT_FILE_PREFIX=$with_xaltFilePrefix" >&5
 $as_echo "XALT_FILE_PREFIX=$with_xaltFilePrefix" >&6; }
+
+  #Check whether xaltFilePrefix is asking to use a user directory.
+  if test $XALT_FILE_PREFIX = USER_DIR; then
+    if test "${with_userdirname+set}" = set; then :
+      withval=$with_userdirname; USER_DIRNAME="$withval"
+    else
+      with_userdirname="HOME"; withval=$with_userdirname; USER_DIRNAME="$withval"
+    fi
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: USER_DIRNAME=$with_userdirname" >&5
+$as_echo "USER_DIRNAME=$with_userdirname" >&6; }
+  fi
 
 cat >>confdefs.h <<_ACEOF
 #define XALT_FILE_PREFIX "$with_xaltFilePrefix"
@@ -6731,6 +6746,7 @@ echo "XALT Site Controlled Prefix.........................." : $SITE_CONTROLLED_
 echo
 echo "XALT PRELOAD MODE ONLY..............................." : $PRELOAD_ONLY
 echo "XALT_FILE_PREFIX....................................." : "$XALT_FILE_PREFIX"
+echo "USER_DIRNAME........................................." : "$USER_DIRNAME"
 echo "XALT_TRANSMISSION_STYLE.............................." : $TRANSMISSION
 echo "XALT_ETC_DIR........................................." : $ETC_DIR
 echo "XALT Config.py file.................................." : $XALT_CONFIG_PY

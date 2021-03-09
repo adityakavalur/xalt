@@ -25,6 +25,7 @@
 #define XALT_DEFAULT_DIR           "@XALT_DEFAULT_DIR@"
 #define XALT_ETC_DIR               "@ETC_DIR@"
 #define XALT_FILE_PREFIX           "@XALT_FILE_PREFIX@"
+#define USER_DIRNAME               "@USER_DIRNAME@"
 #define XALT_FUNCTION_TRACKING     "@XALT_FUNCTION_TRACKING@"
 #define XALT_GIT_VERSION           "@XALT_GIT_VERSION@"
 #define XALT_GPU_TRACKING          "@XALT_GPU_TRACKING@"

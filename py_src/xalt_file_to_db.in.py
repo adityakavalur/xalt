@@ -313,8 +313,12 @@ def build_resultDir(hdir, transmission, kind):
 
   
   prefix = os.environ.get("XALT_FILE_PREFIX","@xalt_file_prefix@")
-  if (not prefix or prefix == "USE_HOME"):
-    return os.path.join(hdir,".xalt.d",tail)
+#  if (not prefix or prefix == "USE_HOME"):
+#    return os.path.join(hdir,".xalt.d",tail)
+  if (not prefix or prefix == "USER_DIR"):
+     user_dirname = os.environ.get("USER_DIRNAME")
+     user_dirpath = os.environ.get(user_dirname)
+     return os.path.join(user_dirpath,".xalt.d",tail)
 
   return os.path.join(prefix,tail)
 

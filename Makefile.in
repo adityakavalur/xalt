@@ -64,6 +64,7 @@ PATH_TO_MKTEMP        	:= @PATH_TO_MKTEMP@
 PATH_TO_PSTREE       	:= @PATH_TO_PSTREE@
 USE_ARGPARSE         	:= @USE_CONTRIB_ARGPARSE@
 XALT_FILE_PREFIX     	:= @XALT_FILE_PREFIX@
+USER_DIRNAME     	:= @USER_DIRNAME@
 XALT_LOGGING_URL        := @XALT_LOGGING_URL@
 XALT_PRIME_NUMBER     	:= @XALT_PRIME_NUMBER@
 XALT_PRIME_FMT     	:= @XALT_PRIME_FMT@
@@ -180,7 +181,7 @@ build_compiled:
                 CRYPTO_STR=$(CRYPTO_STR) UUID_STR=$(UUID_STR) CURL_STR=$(CURL_STR)                 \
                 XALT_LOGGING_URL=$(XALT_LOGGING_URL) SITE_PKG_DIR=$(SITE_PKG_DIR)                  \
                 GPU_STR=$(GPU_STR) PY_BUILD_TOOLS=$(abs_srcdir)/proj_mgmt/py_build_tools           \
-	        EXTRA_FLAGS=$(EXTRA_FLAGS)                                                         \
+	        EXTRA_FLAGS=$(EXTRA_FLAGS) USER_DIRNAME=$(USER_DIRNAME)                            \
                 all
 
 inst_obfuscate:
@@ -268,6 +269,7 @@ __installMe:
 	        -e 's|@xalt_tracking_mpi_only@|$(TRACKING_MPI_ONLY)|g'     	  \
 	        -e 's|@xalt_site_dir@|$(SITE)|g'                           	  \
 	        -e 's|@xalt_file_prefix@|$(XALT_FILE_PREFIX)|g'            	  \
+	        -e 's|@user_dirname@|$(USER_DIRNAME)|g'                  	  \
 	        -e 's|@xalt_logging_url@|$(XALT_LOGGING_URL)|g'            	  \
 	        -e 's|@xalt_prime_number@|$(XALT_PRIME_NUMBER)|g'            	  \
 	        -e 's|@xalt_prime_fmt@|$(XALT_PRIME_FMT)|g'             	  \

@@ -72,7 +72,11 @@ AC_ARG_WITH(xaltFilePrefix,
     AC_MSG_RESULT([XALT_FILE_PREFIX=$with_xaltFilePrefix])
     AC_DEFINE_UNQUOTED(XALT_FILE_PREFIX, "$with_xaltFilePrefix",[Prefix where the json files are written])dnl
     ,
-    withval="USE_HOME"
+    #withval="USE_HOME"
+    #AC_MSG_RESULT([XALT_FILE_PREFIX=$withval])
+    #XALT_FILE_PREFIX="$withval"
+    #AC_DEFINE_UNQUOTED(XALT_FILE_PREFIX, "$withval",[Prefix where the json files are written]))dnl
+    withval="USER_DIR"
     AC_MSG_RESULT([XALT_FILE_PREFIX=$withval])
     XALT_FILE_PREFIX="$withval"
     AC_DEFINE_UNQUOTED(XALT_FILE_PREFIX, "$withval",[Prefix where the json files are written]))dnl

@@ -272,6 +272,10 @@ int main(int argc, char* argv[])
   std::cout << "XALT_SYSHOST:                    " << syshost                        << "\n";
   std::cout << "XALT_CMDLINE_RECORD:             " << cmdline_record                 << "\n";
   std::cout << "XALT_FILE_PREFIX:                " << XALT_FILE_PREFIX               << "\n";
+
+  if (strcasecmp(XALT_FILE_PREFIX,"USER_DIR") == 0)
+     std::cout << "USER_DIRNAME:                 " << USER_DIRNAME                   << "\n";
+
   std::cout << "XALT_PRIME_NUMBER:               " << XALT_PRIME_NUMBER              << "\n";
   std::cout << "XALT_INTERFACE_VERSION:          " << XALT_INTERFACE_VERSION         << "\n";
   std::cout << "XALT_TRANSMISSION_STYLE:         " << transmission                   << "\n";

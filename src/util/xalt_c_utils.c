@@ -41,18 +41,22 @@ int mkpath(char* file_path, mode_t mode)
 void build_resultDir(char **resultDir, const char* kind, const char* transmission, const char* uuid_str)
 {
 
-  char* c_home = getenv("HOME");
-  
+  //char* c_home = getenv("HOME");
+  char* c_userdirpath = getenv(USER_DIRNAME);  
+
   const char * xalt_file_prefix = getenv("XALT_FILE_PREFIX");
   if (xalt_file_prefix == NULL)
     xalt_file_prefix = XALT_FILE_PREFIX;
 
-  if ((c_home != NULL) && (strcasecmp(xalt_file_prefix,"USE_HOME") == 0))
+  //if ((c_home != NULL) && (strcasecmp(xalt_file_prefix,"USE_HOME") == 0))
+  if ((c_userdirpath != NULL) && (strcasecmp(xalt_file_prefix,"USER_DIR") == 0))
     {
       if (strcasecmp(transmission,"file_separate_dirs") == 0)
-	asprintf(resultDir,"%s/.xalt.d/%s/",c_home,kind);
+	//asprintf(resultDir,"%s/.xalt.d/%s/",c_home,kind);
+	asprintf(resultDir,"%s/.xalt.d/%s/",c_userdirpath,kind);
       else
-	asprintf(resultDir,"%s/.xalt.d/",c_home);
+	//asprintf(resultDir,"%s/.xalt.d/",c_home);
+	asprintf(resultDir,"%s/.xalt.d/",c_userdirpath);
     }
   else
     {

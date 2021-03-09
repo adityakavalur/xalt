@@ -217,9 +217,11 @@ void pkgRecordTransmit(const char* uuid_str, const char* syshost, const char* tr
       return;
     }
 
-  char* c_home = getenv("HOME");
+  //char* c_home = getenv("HOME");
+  char* c_userdirpath = getenv(USER_DIRNAME);
   char* c_user = getenv("USER");
-  if (c_home == NULL || c_user == NULL )
+  //if (c_home == NULL || c_user == NULL )
+  if (c_userdirpath == NULL || c_user == NULL )
     return;
 
   int         ulen      = 12;

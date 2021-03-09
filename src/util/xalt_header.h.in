@@ -121,6 +121,9 @@
 /* Prefix where the json files are written */
 #undef XALT_FILE_PREFIX
 
+/* User directory where the json files can be written */
+#undef USER_DIRNAME
+
 /* Track functions from modules */
 #undef XALT_FUNCTION_TRACKING
 
