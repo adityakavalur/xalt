@@ -732,6 +732,7 @@ with_transmission
 with_xaltLoggingUrl
 with_functionTracking
 with_xaltFilePrefix
+with_userdirname
 with_trackGPU
 with_trackMPI
 with_trackScalarPrgms
